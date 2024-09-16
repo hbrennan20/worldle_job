@@ -16,6 +16,7 @@ const LondonRunClub: React.FC = () => {
         <h1 className="text-white m-2 text-lg md:text-2xl text-center w-full md:w-auto">London Social Run Clubs</h1>
         <a 
           href="https://www.google.com"
+          target="_blank"
           className="bg-blue-500 text-white p-2 rounded border-none font-bold cursor-pointer m-2 w-full md:w-auto inline-block text-center"
         >
           🏃‍♂️ Add Run Club
