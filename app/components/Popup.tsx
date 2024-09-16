@@ -2,11 +2,14 @@ import React from 'react';
 import { Card, CardContent, Typography, Button, Dialog } from '@mui/material';
 
 interface PopupProps {
-  message: string;
+  info: {
+    message: string;
+    coordinates: [number, number];
+  };
   onClose: () => void;
 }
 
-const Popup: React.FC<PopupProps> = ({ message, onClose }) => {
+const Popup: React.FC<PopupProps> = ({ info, onClose }) => {
   return (
     <Dialog
       open={true}
@@ -18,7 +21,12 @@ const Popup: React.FC<PopupProps> = ({ message, onClose }) => {
       <Card>
         <CardContent>
           <Typography variant="body1" gutterBottom>
-            {message}
+            <strong>Message:</strong><br />
+            {info.message}
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            <strong>Co-ordinates:</strong><br />
+            ({info.coordinates[0]}, {info.coordinates[1]})
           </Typography>
           <Button
             variant="contained"

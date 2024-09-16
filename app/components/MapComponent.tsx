@@ -19,10 +19,15 @@ interface Marker {
   };
 }
 
+interface PopupInfo {
+  message: string;
+  coordinates: [number, number];
+}
+
 const MapComponent: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [popupMessage, setPopupMessage] = useState<string | null>(null);
+  const [popupInfo, setPopupInfo] = useState<PopupInfo | null>(null);
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -53,8 +58,10 @@ const MapComponent: React.FC = () => {
         el.style.cursor = 'pointer';
 
         el.addEventListener('click', () => {
-          console.log('Marker clicked:', marker.properties.message);
-          setPopupMessage(marker.properties.message);
+          setPopupInfo({
+            message: marker.properties.message,
+            coordinates: marker.geometry.coordinates
+          });
         });
 
         new mapboxgl.Marker(el)
@@ -71,12 +78,12 @@ const MapComponent: React.FC = () => {
   return (
     <div style={{ height: '100vh', width: '100%' }}>
       <div ref={mapContainer} style={{ width: '100%', height: '100%' }} />
-      {popupMessage && (
+      {popupInfo && (
         <Popup
-          message={popupMessage}
+          info={popupInfo}
           onClose={() => {
             console.log('Closing popup');
-            setPopupMessage(null);
+            setPopupInfo(null);
           }}
         />
       )}
