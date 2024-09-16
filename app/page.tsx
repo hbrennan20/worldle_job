@@ -15,7 +15,7 @@ const LondonRunClub: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col p-2 bg-gray-200">
+    <div className="min-h-screen w-full flex flex-col px-4 py-2 bg-gray-200">
       <nav className="bg-gray-800 text-white p-2 flex justify-between items-center flex-wrap">
         <h1 className="text-white m-2 text-lg md:text-2xl text-center w-full md:w-auto">London Social Run Clubs</h1>
         <button 
