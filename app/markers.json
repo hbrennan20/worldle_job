@@ -4,73 +4,97 @@
     {
       "type": "Feature",
       "properties": {
-        "message": "Run club link: https://runclub.com/",
+        "message": "Track Mafia: Thursdays at 6:30pm, Paddington Recreation Ground W9 1PF. Free track training in 4-week blocks. All abilities welcome, bag drop available.",
         "imageId": 1011,
         "iconSize": [45, 45]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-6.1853, 53.4145]
+        "coordinates": [-0.1891, 51.5297]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Run club link: https://runclub.com/",
+        "message": "Your Friendly Runners: Saturdays at 9am, Lodestar Coffee E5 8EE. East London-based friendly running group for all abilities. Bag drop available.",
         "imageId": 870,
         "iconSize": [45, 45]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-0.1033, 51.5343]
+        "coordinates": [-0.0551, 51.5486]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Run club link: https://runclub.com/",
+        "message": "One Track: Thursday at 6:30pm, Duke of York Square SW3 4LY. Track runs in Chelsea led by coach Fletch. All abilities welcome, bag drop on site.",
         "imageId": 870,
         "iconSize": [45, 45]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-0.0814, 51.5264]
+        "coordinates": [-0.1591, 51.4908]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Run club link: https://runclub.com/",
+        "message": "Pure Sport Run Club: Wednesday at 6:15pm, Battersea Park Track Entrance/Pure Sport HQ (alternate weeks). Weekly social 5k of intervals plus monthly track night. All abilities welcome, bag drop available.",
         "imageId": 870,
         "iconSize": [45, 45]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-0.1333, 51.4633]
+        "coordinates": [-0.1545, 51.4791]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Run club link: https://runclub.com/",
+        "message": "Tempo run club: Tuesday at 6:45pm, Peckham Levels SE15 4ST. Community of musicians and DJs in South London. Free weekly run for all abilities, bag drop and open deck DJ sets.",
         "imageId": 871,
         "iconSize": [45, 45]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-6.1677, 53.3266]
+        "coordinates": [-0.0697, 51.4697]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Run club link: https://runclub.com/",
+        "message": "Mafia Moves: Tuesday at 6.30pm, Beaverton Corner Pin N17 0AG, and Saturday at 9:30am, Tottenham Stadium. Weekly runs for all abilities in north London led by coach Andre. Free sessions with bag drop available.",
         "imageId": 837,
         "iconSize": [45, 45]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-6.2853, 53.3738]
+        "coordinates": [-0.0662, 51.6042]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Grove lane runners: Wednesday at 7:30am and Sunday at 8:45am, Govelane Deli SE5 8SY. Friendly 5's on Sundays and mid-week miles on Wednesdays in south London. All abilities welcome, bag drop available.",
+        "imageId": 872,
+        "iconSize": [45, 45]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.0857, 51.4739]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Tracksmith Run Clubs: Various locations in London. Several weekly run clubs led by coach Amrit. Check Tracksmith Strava for event details.",
+        "imageId": 873,
+        "iconSize": [45, 45]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1278, 51.5074]
       }
     }
   ]
