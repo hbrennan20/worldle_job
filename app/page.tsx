@@ -10,8 +10,26 @@ const LondonRunClub: React.FC = () => {
         backgroundColor: '#f5f5f5', 
         color: 'white', 
         padding: '1rem',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
       }}>
         <h1 style={{ color: 'black' }}>London Run Clubs</h1>
+        <a 
+          href="https://www.google.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          style={{
+            backgroundColor: '#4285F4',
+            color: 'white',
+            padding: '0.5rem 1rem',
+            borderRadius: '4px',
+            textDecoration: 'none',
+            fontWeight: 'bold',
+          }}
+        >
+          🏃‍♂️ Add Run Club
+        </a>
       </nav>
       <div style={{ flex: 1, position: 'relative', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
         <div style={{ flex: 1, padding: '1rem' }}>
