@@ -1,9 +1,21 @@
 'use client';
 
-import React from 'react';
-import MapComponent from './components/MapComponent';
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+import Popup from './components/Popup';
+
+const MapComponent = dynamic(() => import('./components/MapComponent'), {
+  ssr: false,
+});
 
 const LondonRunClub: React.FC = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleAddRunClub = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault(); // Prevent default behavior
+    setShowPopup(true);
+  };
+
   return (
     <div style={{ height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', padding: '1rem' }}>
       <nav style={{ 
@@ -15,21 +27,21 @@ const LondonRunClub: React.FC = () => {
         alignItems: 'center',
       }}>
         <h1 style={{ color: 'black' }}>London Run Clubs</h1>
-        <a 
-          href="https://www.google.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
+        <button 
+          onClick={handleAddRunClub}
           style={{
             backgroundColor: '#4285F4',
             color: 'white',
             padding: '0.5rem 1rem',
             borderRadius: '4px',
+            border: 'none',
             textDecoration: 'none',
             fontWeight: 'bold',
+            cursor: 'pointer',
           }}
         >
           🏃‍♂️ Add Run Club
-        </a>
+        </button>
       </nav>
       <div style={{ flex: 1, position: 'relative', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
         <div style={{ flex: 1, padding: '1rem' }}>
@@ -46,6 +58,12 @@ const LondonRunClub: React.FC = () => {
           <p>Welcome to London Run Clubs! Check the map for run club locations and upcoming events.</p>
         </div>
       </div>
+      {showPopup && (
+        <Popup
+          message="This feature is coming soon!"
+          onClose={() => setShowPopup(false)}
+        />
+      )}
     </div>
   );
 };
