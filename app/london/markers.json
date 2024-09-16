@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Run club link: https://runclub.com/",
+        "imageId": 1011,
+        "iconSize": [45, 45]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-6.1853, 53.4145]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Run club link: https://runclub.com/",
+        "imageId": 870,
+        "iconSize": [45, 45]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1033, 51.5343]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Run club link: https://runclub.com/",
+        "imageId": 870,
+        "iconSize": [45, 45]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.0814, 51.5264]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Run club link: https://runclub.com/",
+        "imageId": 870,
+        "iconSize": [45, 45]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1333, 51.4633]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Run club link: https://runclub.com/",
+        "imageId": 871,
+        "iconSize": [45, 45]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-6.1677, 53.3266]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Run club link: https://runclub.com/",
+        "imageId": 837,
+        "iconSize": [45, 45]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-6.2853, 53.3738]
+      }
+    }
+  ]
+}
