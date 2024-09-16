@@ -15,23 +15,23 @@ const LondonRunClub: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-full flex flex-col p-4 bg-gray-200">
-      <nav className="bg-gray-800 text-white p-4 flex justify-between items-center flex-wrap">
-        <h1 className="text-white m-2">London Social Run Clubs</h1>
+    <div className="min-h-screen w-full flex flex-col p-2 bg-gray-200">
+      <nav className="bg-gray-800 text-white p-2 flex justify-between items-center flex-wrap">
+        <h1 className="text-white m-2 text-lg md:text-2xl text-center w-full md:w-auto">London Social Run Clubs</h1>
         <button 
           onClick={handleAddRunClub}
-          className="bg-blue-500 text-white p-2 rounded border-none font-bold cursor-pointer m-2"
+          className="bg-blue-500 text-white p-2 rounded border-none font-bold cursor-pointer m-2 w-full md:w-auto"
         >
           🏃‍♂️ Add Run Club
         </button>
       </nav>
-      <div className="flex-1 relative p-8 flex flex-col">
-        <div className="flex-1 p-4 md:p-60">
+      <div className="flex-1 relative p-2 md:p-4 flex flex-col">
+        <div className="flex-1 p-2 md:p-4">
           <MapComponent />
         </div>
-        <div className="mt-4 p-4 bg-white rounded shadow-md">
-          <h2 className="mb-2">Notice Board</h2>
-          <p>Welcome to London Run Clubs! Check the map for run club locations and upcoming events.</p>
+        <div className="mt-2 p-2 bg-white rounded shadow-md">
+          <h2 className="mb-2 text-lg md:text-xl">Notice Board</h2>
+          <p className="text-sm md:text-base">Welcome to London Run Clubs! Check the map for run club locations and upcoming events.</p>
         </div>
       </div>
     </div>

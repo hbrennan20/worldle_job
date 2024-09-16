@@ -45,7 +45,9 @@ const MapComponent: React.FC = () => {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [-0.1575, 51.5074],
-      zoom: 11
+      zoom: 11,
+      pitchWithRotate: false, // Disable map tilting
+      dragRotate: false // Disable map rotation
     });
 
     map.current = newMap;
