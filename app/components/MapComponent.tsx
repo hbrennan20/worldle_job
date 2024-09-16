@@ -16,12 +16,18 @@ interface Marker {
     iconSize: [number, number];
     imageId: number;
     message: string;
+    instagram: string;
+    location: string;
+    timetable: string;
   };
 }
 
 interface PopupInfo {
   message: string;
   coordinates: [number, number];
+  instagram: string;
+  location: string;
+  timetable: string;
 }
 
 const MapComponent: React.FC = () => {
@@ -60,7 +66,10 @@ const MapComponent: React.FC = () => {
         el.addEventListener('click', () => {
           setPopupInfo({
             message: marker.properties.message,
-            coordinates: marker.geometry.coordinates
+            coordinates: marker.geometry.coordinates,
+            instagram: marker.properties.instagram,
+            location: marker.properties.location,
+            timetable: marker.properties.timetable
           });
         });
 

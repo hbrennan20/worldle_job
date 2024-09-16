@@ -1,19 +1,17 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
-import Popup from './components/Popup';
 
 const MapComponent = dynamic(() => import('./components/MapComponent'), {
   ssr: false,
 });
 
 const LondonRunClub: React.FC = () => {
-  const [showPopup, setShowPopup] = useState(false);
-
   const handleAddRunClub = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault(); // Prevent default behavior
-    setShowPopup(true);
+    // Placeholder for future functionality
+    console.log('Add Run Club clicked');
   };
 
   return (
@@ -58,12 +56,6 @@ const LondonRunClub: React.FC = () => {
           <p>Welcome to London Run Clubs! Check the map for run club locations and upcoming events.</p>
         </div>
       </div>
-      {showPopup && (
-        <Popup
-          message="This feature is coming soon!"
-          onClose={() => setShowPopup(false)}
-        />
-      )}
     </div>
   );
 };

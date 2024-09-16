@@ -6,7 +6,10 @@
       "properties": {
         "message": "Track Mafia: Thursdays at 6:30pm, Paddington Recreation Ground W9 1PF. Free track training in 4-week blocks. All abilities welcome, bag drop available.",
         "imageId": 1011,
-        "iconSize": [45, 45]
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/trackmafia/",
+        "location": "Paddington Recreation Ground",
+        "timetable": "Thursdays at 6:30pm"
       },
       "geometry": {
         "type": "Point",
@@ -18,7 +21,10 @@
       "properties": {
         "message": "Your Friendly Runners: Saturdays at 9am, Lodestar Coffee E5 8EE. East London-based friendly running group for all abilities. Bag drop available.",
         "imageId": 870,
-        "iconSize": [45, 45]
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/yourfriendlyrunners/",
+        "location": "Lodestar Coffee",
+        "timetable": "Saturdays at 9am"
       },
       "geometry": {
         "type": "Point",
@@ -30,7 +36,10 @@
       "properties": {
         "message": "One Track: Thursday at 6:30pm, Duke of York Square SW3 4LY. Track runs in Chelsea led by coach Fletch. All abilities welcome, bag drop on site.",
         "imageId": 870,
-        "iconSize": [45, 45]
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/onetrack/",
+        "location": "Duke of York Square",
+        "timetable": "Thursday at 6:30pm"
       },
       "geometry": {
         "type": "Point",
@@ -42,7 +51,10 @@
       "properties": {
         "message": "Pure Sport Run Club: Wednesday at 6:15pm, Battersea Park Track Entrance/Pure Sport HQ (alternate weeks). Weekly social 5k of intervals plus monthly track night. All abilities welcome, bag drop available.",
         "imageId": 870,
-        "iconSize": [45, 45]
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/puresportrunclub/",
+        "location": "Battersea Park Track",
+        "timetable": "Wednesday at 6:15pm"
       },
       "geometry": {
         "type": "Point",
@@ -54,7 +66,10 @@
       "properties": {
         "message": "Tempo run club: Tuesday at 6:45pm, Peckham Levels SE15 4ST. Community of musicians and DJs in South London. Free weekly run for all abilities, bag drop and open deck DJ sets.",
         "imageId": 871,
-        "iconSize": [45, 45]
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/temporunclub/",
+        "location": "Peckham Levels",
+        "timetable": "Tuesday at 6:45pm"
       },
       "geometry": {
         "type": "Point",
@@ -66,7 +81,10 @@
       "properties": {
         "message": "Mafia Moves: Tuesday at 6.30pm, Beaverton Corner Pin N17 0AG, and Saturday at 9:30am, Tottenham Stadium. Weekly runs for all abilities in north London led by coach Andre. Free sessions with bag drop available.",
         "imageId": 837,
-        "iconSize": [45, 45]
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/mafiamoves/",
+        "location": "Beaverton Corner Pin / Tottenham Stadium",
+        "timetable": "Tuesday at 6.30pm, Saturday at 9:30am"
       },
       "geometry": {
         "type": "Point",
@@ -78,7 +96,10 @@
       "properties": {
         "message": "Grove lane runners: Wednesday at 7:30am and Sunday at 8:45am, Govelane Deli SE5 8SY. Friendly 5's on Sundays and mid-week miles on Wednesdays in south London. All abilities welcome, bag drop available.",
         "imageId": 872,
-        "iconSize": [45, 45]
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/grovelanerunners/",
+        "location": "Govelane Deli",
+        "timetable": "Wednesday at 7:30am, Sunday at 8:45am"
       },
       "geometry": {
         "type": "Point",
@@ -90,11 +111,134 @@
       "properties": {
         "message": "Tracksmith Run Clubs: Various locations in London. Several weekly run clubs led by coach Amrit. Check Tracksmith Strava for event details.",
         "imageId": 873,
-        "iconSize": [45, 45]
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/tracksmithrunning/",
+        "location": "Various locations in London",
+        "timetable": "Various times, check Tracksmith Strava for details"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [-0.1278, 51.5074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Solemother: Various locations. Super fun, sassy, and supportive social exercise group for women. Activities include runs, hikes, swims, classes, and social events.",
+        "imageId": 874,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/solemotheruk/",
+        "location": "Various locations",
+        "timetable": "Check Instagram for event details"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1276, 51.5074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Run Talk Run: Various locations across the UK. Running group and mental health support community. Casual jogs and supportive conversations.",
+        "imageId": 875,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/runtalkrun/",
+        "location": "Various locations across the UK",
+        "timetable": "Check website for local group times"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1275, 51.5074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Park Run UK: Various locations. Free 5K runs every Saturday morning. Register online, print barcode, and join any event worldwide.",
+        "imageId": 876,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/parkrunuk/",
+        "location": "Various locations across the UK",
+        "timetable": "Every Saturday morning"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1274, 51.5074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Run Dem Crew: London. Fun running crew with emphasis on community, youth mentoring, and creative endeavors.",
+        "imageId": 877,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/rundemcrew/",
+        "location": "London",
+        "timetable": "Check Instagram for event details"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1273, 51.5074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Midnight Runners: London. Runs with loud beats, exercise stops, and a party atmosphere. No one left behind policy.",
+        "imageId": 878,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/midnight_runners/",
+        "location": "London",
+        "timetable": "Check Instagram for event details"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1272, 51.5074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "WMN RUN: London and Bristol. Mission to bridge the gender gap in running. Regular social runs and race training opportunities.",
+        "imageId": 879,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/wmnrun/",
+        "location": "London and Bristol",
+        "timetable": "Check Instagram for event details"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1271, 51.5074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Mikkeller Running Club: London. Combines running with food and beer. Global operation with a focus on balancing fitness and enjoyment of life.",
+        "imageId": 880,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/mikkellerrunningclub/",
+        "location": "London",
+        "timetable": "Check Instagram for event details"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1270, 51.5074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Our Parks: Various locations across UK parks. Free fitness classes including running. Focus on accessibility and inclusivity.",
+        "imageId": 881,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/ourparks/",
+        "location": "Various UK parks",
+        "timetable": "Check website for local class times"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1269, 51.5074]
       }
     }
   ]
