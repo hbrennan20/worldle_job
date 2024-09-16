@@ -45,7 +45,7 @@ const MapComponent: React.FC = () => {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [-0.1575, 51.5074],
-      zoom: 11,
+      zoom: 12,
       pitchWithRotate: false, // Disable map tilting
       dragRotate: false // Disable map rotation
     });
@@ -55,10 +55,10 @@ const MapComponent: React.FC = () => {
     newMap.on('load', () => {
       (geojson.features as unknown as Marker[]).forEach((marker) => {
         const el = document.createElement('div');
-        const width = marker.properties.iconSize[0];
-        const height = marker.properties.iconSize[1];
+        const width = marker.properties.iconSize[0] * 0.7; // Reduce size by 20%
+        const height = marker.properties.iconSize[1] * 0.7; // Reduce size by 20%
         el.className = 'marker';
-        el.style.backgroundImage = `url(https://picsum.photos/id/${marker.properties.imageId}/${width}/${height})`;
+        el.style.backgroundImage = `url(https://picsum.photos/id/${marker.properties.imageId}/${Math.round(width)}/${Math.round(height)})`;
         el.style.width = `${width}px`;
         el.style.height = `${height}px`;
         el.style.backgroundSize = '100%';
