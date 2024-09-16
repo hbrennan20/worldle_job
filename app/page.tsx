@@ -1,79 +1,33 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import geojson from './markers.json';
-
-interface Marker {
-  type: 'Feature';
-  geometry: {
-    type: 'Point';
-    coordinates: [number, number];
-  };
-  properties: {
-    iconSize: [number, number];
-    imageId: number;
-    message: string;
-  };
-}
+import React from 'react';
+import MapComponent from './components/MapComponent';
 
 const LondonRunClub: React.FC = () => {
-  const mapContainerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<mapboxgl.Map | null>(null);
-
-  useEffect(() => {
-    if (!mapContainerRef.current) return;
-
-    mapboxgl.accessToken =
-      'pk.eyJ1IjoiaGIyMDAwIiwiYSI6ImNtMGU3cmI5YjBpMnoya3I0ZHZwYXM5MG4ifQ.AnJMH_l3Hg_W2loQDdM-MQ';
-
-    const map = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [-0.1575, 51.5074],
-      zoom: 11
-    });
-
-    mapRef.current = map;
-
-    map.on('load', () => {
-      (geojson.features as unknown as Marker[]).forEach((marker) => {
-        const el = document.createElement('div');
-        const width = marker.properties.iconSize[0];
-        const height = marker.properties.iconSize[1];
-        el.className = 'marker';
-        el.style.backgroundImage = `url(https://picsum.photos/id/${marker.properties.imageId}/${width}/${height})`;
-        el.style.width = `${width}px`;
-        el.style.height = `${height}px`;
-        el.style.backgroundSize = '100%';
-        el.style.borderRadius = '50%';
-        el.style.cursor = 'pointer';
-
-        el.addEventListener('click', () => {
-          window.alert(marker.properties.message);
-        });
-
-        new mapboxgl.Marker(el)
-          .setLngLat(marker.geometry.coordinates)
-          .addTo(map);
-      });
-    });
-
-    return () => {
-      map.remove();
-    };
-  }, []);
-
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
-      <div
-        ref={mapContainerRef}
-        style={{
-          width: '100%',
-          height: '100%'
-        }}
-      />
+    <div style={{ height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', padding: '1rem' }}>
+      <nav style={{ 
+        backgroundColor: '#f5f5f5', 
+        color: 'white', 
+        padding: '1rem',
+      }}>
+        <h1 style={{ color: 'black' }}>London Run Clubs</h1>
+      </nav>
+      <div style={{ flex: 1, position: 'relative', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ flex: 1, padding: '1rem' }}>
+          <MapComponent />
+        </div>
+        <div style={{ 
+          marginTop: '1rem', 
+          padding: '1rem', 
+          backgroundColor: '#f0f0f0', 
+          borderRadius: '8px',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+        }}>
+          <h2 style={{ marginBottom: '0.5rem' }}>Notice Board</h2>
+          <p>Welcome to London Run Clubs! Check the map for run club locations and upcoming events.</p>
+        </div>
+      </div>
     </div>
   );
 };
