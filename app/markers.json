@@ -240,6 +240,96 @@
         "type": "Point",
         "coordinates": [-0.1269, 51.5074]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "LDN Slct: Speed sessions on Tuesdays at Paddington Track and Hyde Park for Saturday morning social runs. Headed up by coach Manni.",
+        "imageId": 882,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/ldnslct/",
+        "location": "Paddington Track and Hyde Park",
+        "timetable": "Tuesdays and Saturdays"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1768, 51.5194]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Scrambled Legs: Weekly long runs on Saturdays between 20-30k in London. New routes and meeting places each week.",
+        "imageId": 883,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/scrambledlegs/",
+        "location": "Various locations in London",
+        "timetable": "Saturdays"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1277, 51.5073]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Sexy Pace Run Crew: Biweekly women's social runs for beginners and anyone looking to run at a 'sexy pace'. Starting at the On Regent street store for a 5k.",
+        "imageId": 884,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/sexypaceruncrew/",
+        "location": "On Regent Street Store",
+        "timetable": "Biweekly"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1410, 51.5131]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Say Yes Club: Every Tuesday evening at 6:15pm in London Fields for a social 5k. Finish at a pub for social drinks.",
+        "imageId": 885,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/sayyesclub/",
+        "location": "London Fields",
+        "timetable": "Tuesdays at 6:15pm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.0575, 51.5415]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "10Ironwomen: Inclusive female-only run and Triathlon club in London. Striving for a 50/50 split in ironman attendance.",
+        "imageId": 886,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/10ironwomen/",
+        "location": "Various locations in London",
+        "timetable": "Check Instagram for event details"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1276, 51.5072]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Ealing Eagles: Friendly, inclusive and diverse running club based in Ealing. Social Monday and Wednesday 7.30pm club runs.",
+        "imageId": 887,
+        "iconSize": [45, 45],
+        "instagram": "https://www.instagram.com/ealingeagles/",
+        "location": "Ealing",
+        "timetable": "Mondays and Wednesdays at 7:30pm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.3089, 51.5136]
+      }
     }
   ]
 }
