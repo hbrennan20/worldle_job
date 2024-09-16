@@ -24,7 +24,7 @@ const LondonRunClub: React.FC = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
       }}>
-        <h1 style={{ color: 'black' }}>London Run Clubs</h1>
+        <h1 style={{ color: 'black' }}>London Social Run Clubs</h1>
         <button 
           onClick={handleAddRunClub}
           style={{
