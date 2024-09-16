@@ -42,7 +42,7 @@ const LondonRunClub: React.FC = () => {
         </button>
       </nav>
       <div style={{ flex: 1, position: 'relative', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ flex: 1, padding: '1rem' }}>
+        <div style={{ flex: 1, padding: '1rem 15rem' }}>
           <MapComponent />
         </div>
         <div style={{ 
