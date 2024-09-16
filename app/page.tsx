@@ -2,6 +2,7 @@
 
 import React from 'react';
 import dynamic from 'next/dynamic';
+import RunClubCards from './components/Cards';
 
 const MapComponent = dynamic(() => import('./components/MapComponent'), {
   ssr: false,
@@ -29,8 +30,8 @@ const LondonRunClub: React.FC = () => {
           </div>
         </div>
         <div className="mt-4 p-2 bg-white rounded shadow-md">
-          <h2 className="mb-2 text-lg md:text-xl">Notice Board</h2>
-          <p className="text-sm md:text-base">Welcome to London Run Clubs! Check the map for run club locations and upcoming events.</p>
+          <h2 className="mb-2 text-lg md:text-xl">Run Club Cards</h2>
+          <RunClubCards />
         </div>
       </div>
     </div>
