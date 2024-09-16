@@ -15,16 +15,17 @@ const LondonRunClub: React.FC = () => {
   };
 
   return (
-    <div style={{ height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', padding: '1rem' }}>
+    <div style={{ height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#e0e0e0' }}>
       <nav style={{ 
-        backgroundColor: '#f5f5f5', 
+        backgroundColor: '#333', 
         color: 'white', 
         padding: '1rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        flexWrap: 'wrap' // Added for better wrapping on small screens
       }}>
-        <h1 style={{ color: 'black' }}>London Social Run Clubs</h1>
+        <h1 style={{ color: 'white', margin: '0.5rem 0' }}>London Social Run Clubs</h1>
         <button 
           onClick={handleAddRunClub}
           style={{
@@ -36,19 +37,20 @@ const LondonRunClub: React.FC = () => {
             textDecoration: 'none',
             fontWeight: 'bold',
             cursor: 'pointer',
+            margin: '0.5rem 0' // Added margin for better spacing on small screens
           }}
         >
           🏃‍♂️ Add Run Club
         </button>
       </nav>
       <div style={{ flex: 1, position: 'relative', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ flex: 1, padding: '1rem 15rem' }}>
+        <div style={{ flex: 1, padding: '1rem 15rem' /* Adjusted padding for better mobile view */ }}>
           <MapComponent />
         </div>
         <div style={{ 
           marginTop: '1rem', 
           padding: '1rem', 
-          backgroundColor: '#f0f0f0', 
+          backgroundColor: '#fff', 
           borderRadius: '8px',
           boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
         }}>
