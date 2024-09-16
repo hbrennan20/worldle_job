@@ -25,7 +25,7 @@ const LondonRunClub: React.FC = () => {
         alignItems: 'center',
         flexWrap: 'wrap' // Added for better wrapping on small screens
       }}>
-        <h1 style={{ color: 'white', margin: '0.5rem 0' }}>London Social Rus Clubs</h1>
+        <h1 style={{ color: 'white', margin: '0.5rem 0' }}>London Social Run Clubs</h1>
         <button 
           onClick={handleAddRunClub}
           style={{
