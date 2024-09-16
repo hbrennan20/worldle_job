@@ -15,46 +15,22 @@ const LondonRunClub: React.FC = () => {
   };
 
   return (
-    <div style={{ height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#e0e0e0' }}>
-      <nav style={{ 
-        backgroundColor: '#333', 
-        color: 'white', 
-        padding: '1rem',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        flexWrap: 'wrap' // Added for better wrapping on small screens
-      }}>
-        <h1 style={{ color: 'white', margin: '0.5rem 0' }}>London Social Run Clubs</h1>
+    <div className="h-screen w-full flex flex-col p-4 bg-gray-200">
+      <nav className="bg-gray-800 text-white p-4 flex justify-between items-center flex-wrap">
+        <h1 className="text-white m-2">London Social Run Clubs</h1>
         <button 
           onClick={handleAddRunClub}
-          style={{
-            backgroundColor: '#4285F4',
-            color: 'white',
-            padding: '0.5rem 1rem',
-            borderRadius: '4px',
-            border: 'none',
-            textDecoration: 'none',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            margin: '0.5rem 0' // Added margin for better spacing on small screens
-          }}
+          className="bg-blue-500 text-white p-2 rounded border-none font-bold cursor-pointer m-2"
         >
           🏃‍♂️ Add Run Club
         </button>
       </nav>
-      <div style={{ flex: 1, position: 'relative', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ flex: 1, padding: '1rem 15rem' /* Adjusted padding for better mobile view */ }}>
+      <div className="flex-1 relative p-8 flex flex-col">
+        <div className="flex-1 p-4 md:p-60">
           <MapComponent />
         </div>
-        <div style={{ 
-          marginTop: '1rem', 
-          padding: '1rem', 
-          backgroundColor: '#fff', 
-          borderRadius: '8px',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-        }}>
-          <h2 style={{ marginBottom: '0.5rem' }}>Notice Board</h2>
+        <div className="mt-4 p-4 bg-white rounded shadow-md">
+          <h2 className="mb-2">Notice Board</h2>
           <p>Welcome to London Run Clubs! Check the map for run club locations and upcoming events.</p>
         </div>
       </div>
