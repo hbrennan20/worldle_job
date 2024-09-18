@@ -65,7 +65,8 @@ const MapComponent: React.FC = () => {
         el.style.borderRadius = '50%';
         el.style.cursor = 'pointer';
 
-        el.addEventListener('click', () => {
+        el.addEventListener('click', (e) => {
+          e.stopPropagation(); // Prevent the click from reaching the map
           handleMarkerSelect(marker);
         });
 
