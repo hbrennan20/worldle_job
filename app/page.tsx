@@ -61,70 +61,74 @@ const WordleClone: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center py-4 px-2 bg-gray-100 text-black" onKeyDown={handleKeyPress} tabIndex={0}>
-      <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-8">Wordle Clone</h1>
-      
-      {/* Game Board */}
-      <div className="grid grid-rows-6 gap-1 sm:gap-2 mb-4 sm:mb-8">
-        {[...Array(6)].map((_, rowIndex) => (
-          <div key={rowIndex} className="flex items-center">
-            <div className="grid grid-cols-5 gap-1 sm:gap-2">
-              {[...Array(5)].map((_, colIndex) => {
-                const letter: string = guesses[rowIndex]?.[colIndex] || (rowIndex === guesses.length ? currentGuess[colIndex] : '');
-                const bgColor: string = getLetterColor(letter, colIndex, rowIndex);
-                return (
-                  <div key={colIndex} className={`w-12 h-12 sm:w-14 sm:h-14 border-2 flex items-center justify-center text-xl sm:text-2xl font-bold ${bgColor}`}>
-                    {letter}
-                  </div>
-                );
-              })}
+    <div className="min-h-screen w-full flex flex-col justify-between items-center py-2 px-1 sm:py-8 sm:px-4 bg-gray-100 text-black" onKeyDown={handleKeyPress} tabIndex={0}>
+      <div className="flex flex-col items-center">
+        <h1 className="text-2xl sm:text-5xl font-bold mb-2 sm:mb-10">Wordle Clone</h1>
+        
+        {/* Game Board */}
+        <div className="grid grid-rows-6 gap-1 sm:gap-2 mb-2 sm:mb-10">
+          {[...Array(6)].map((_, rowIndex) => (
+            <div key={rowIndex} className="flex items-center">
+              <div className="grid grid-cols-5 gap-1 sm:gap-2">
+                {[...Array(5)].map((_, colIndex) => {
+                  const letter: string = guesses[rowIndex]?.[colIndex] || (rowIndex === guesses.length ? currentGuess[colIndex] : '');
+                  const bgColor: string = getLetterColor(letter, colIndex, rowIndex);
+                  return (
+                    <div key={colIndex} className={`w-10 h-10 sm:w-16 sm:h-16 border-2 flex items-center justify-center text-lg sm:text-3xl font-bold ${bgColor}`}>
+                      {letter}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Keyboard */}
-      <div className="grid grid-rows-3 gap-1 sm:gap-2 w-full max-w-md mb-4">
-        {['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'].map((row, rowIndex) => (
-          <div key={rowIndex} className="flex justify-center gap-1">
-            {row.split('').map((key) => (
-              <button
-                key={key}
-                className="w-9 h-12 sm:w-10 sm:h-12 bg-gray-300 rounded flex items-center justify-center font-semibold text-base sm:text-base"
-                onClick={() => !gameOver && setCurrentGuess(prev => prev.length < 5 ? prev + key : prev)}
-                disabled={gameOver}
-              >
-                {key}
-              </button>
-            ))}
-          </div>
-        ))}
-      </div>
+      <div className="mt-auto">
+        {/* Keyboard */}
+        <div className="grid grid-rows-3 gap-1 sm:gap-2 w-full max-w-xs sm:max-w-lg mb-2 sm:mb-6">
+          {['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'].map((row, rowIndex) => (
+            <div key={rowIndex} className="flex justify-center gap-1 sm:gap-2">
+              {row.split('').map((key) => (
+                <button
+                  key={key}
+                  className="w-7 h-10 sm:w-12 sm:h-14 bg-gray-300 rounded flex items-center justify-center font-semibold text-sm sm:text-lg"
+                  onClick={() => !gameOver && setCurrentGuess(prev => prev.length < 5 ? prev + key : prev)}
+                  disabled={gameOver}
+                >
+                  {key}
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>
 
-      {/* Submit button */}
-      {!gameOver && (
-        <button
-          className="mb-4 px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:bg-gray-300 text-lg"
-          onClick={submitGuess}
-          disabled={currentGuess.length !== 5}
-        >
-          Submit
-        </button>
-      )}
-
-      {/* Game status and New Game button */}
-      <div className="mt-4 text-lg sm:text-xl font-bold text-center">
-        {gameOver && (
-          <>
-            <div>{currentGuess === word ? 'You won!' : `Game over! The word was ${word}`}</div>
-            <button
-              className="mt-4 px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600 text-lg"
-              onClick={newGame}
-            >
-              New Game
-            </button>
-          </>
+        {/* Submit button */}
+        {!gameOver && (
+          <button
+            className="w-full mb-2 sm:mb-6 px-4 sm:px-8 py-2 sm:py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-300 text-base sm:text-xl font-semibold"
+            onClick={submitGuess}
+            disabled={currentGuess.length !== 5}
+          >
+            Submit
+          </button>
         )}
+
+        {/* Game status and New Game button */}
+        <div className="mt-2 sm:mt-6 text-base sm:text-2xl font-bold text-center">
+          {gameOver && (
+            <>
+              <div>{currentGuess === word ? 'You won!' : `Game over! The word was ${word}`}</div>
+              <button
+                className="mt-2 sm:mt-6 px-4 sm:px-8 py-2 sm:py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-base sm:text-xl font-semibold"
+                onClick={newGame}
+              >
+                New Game
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
