@@ -19,7 +19,8 @@ interface Marker {
     description: string;
     location: string;
     timetable: string;
-    message: string; // Add this line
+    message: string;
+    instagram: string; // Add this line
   };
 }
 
@@ -235,6 +236,21 @@ const Sidebar = React.forwardRef<HTMLDivElement, {
             <p style={{ color: 'black', fontSize: '12px', margin: '2px 0 0 0' }}>
               {club.properties.message}
             </p>
+
+            <a 
+              href={club.properties.instagram} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ 
+                color: '#E1306C', 
+                fontSize: '12px', 
+                margin: '5px 0 0 0', 
+                display: 'block',
+                textDecoration: 'none'
+              }}
+            >
+              Instagram
+            </a>
           </div>
         </div>
       ))}
