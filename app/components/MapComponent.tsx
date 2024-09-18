@@ -75,6 +75,11 @@ const MapComponent: React.FC = () => {
       });
     });
 
+    // Add this new event listener
+    newMap.on('click', () => {
+      setIsSidebarOpen(false);
+    });
+
     // Add this line after map initialization
     newMap.dragRotate.disable();
     newMap.touchZoomRotate.disableRotation();
