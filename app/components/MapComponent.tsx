@@ -18,7 +18,8 @@ interface Marker {
     name: string;
     description: string;
     location: string;
-    meetingTime: string;
+    timetable: string;
+    message: string; // Add this line
   };
 }
 
@@ -199,8 +200,18 @@ const Sidebar: React.FC<{
           />
           <div>
             <p style={{ color: 'black', fontSize: '12px', margin: '2px 0 0 0' }}>Name: {club.properties.name}</p>
+
             <p style={{ color: 'black', fontSize: '12px', margin: '5px 0 0 0' }}>Location: {club.properties.location}</p>
-            <p style={{ color: 'black', fontSize: '12px', margin: '2px 0 0 0' }}>Meeting Time: {club.properties.meetingTime}</p>
+
+            <p style={{ color: 'black', fontSize: '12px', margin: '2px 0 0 0' }}>Meeting Time:</p>
+
+            <p style={{ color: 'black', fontSize: '12px', margin: '2px 0 0 0' }}>
+              {club.properties.timetable}
+            </p>
+
+            <p style={{ color: 'black', fontSize: '12px', margin: '2px 0 0 0' }}>
+              {club.properties.message}
+            </p>
           </div>
         </div>
       ))}
