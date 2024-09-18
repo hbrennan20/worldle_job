@@ -41,7 +41,7 @@ const MapComponent: React.FC = () => {
       style: 'mapbox://styles/hb2000/cm184hssc029201qu3fc1eogd',
       center: [-0.1575, 51.5074],
       zoom: 12,
-      maxZoom: 13,
+      maxZoom: 15,
       minZoom: 10,
       pitchWithRotate: false,
       dragRotate: false,
@@ -94,7 +94,7 @@ const MapComponent: React.FC = () => {
     if (map.current && selectedMarker) {
       map.current.flyTo({
         center: selectedMarker.geometry.coordinates,
-        zoom: 14,
+        zoom: 14.5,
         duration: 1000
       });
     }
