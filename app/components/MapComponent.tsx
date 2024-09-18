@@ -61,6 +61,12 @@ const MapComponent: React.FC = () => {
       }
     });
 
+    newMap.on('zoom', () => {
+      if (newMap.getZoom() < 10) {
+        newMap.setZoom(10);
+      }
+    });
+
     newMap.on('load', () => {
       (geojson.features as unknown as Marker[]).forEach((marker) => {
         const el = document.createElement('div');
