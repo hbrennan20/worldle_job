@@ -174,7 +174,7 @@ const Sidebar = React.forwardRef<HTMLDivElement, {
       color: 'black',
       transition: 'left 0.3s ease-in-out',
       zIndex: 1000,
-      maxWidth: '300px',
+      maxWidth: '260px', // Reduced from 300px to 280px
     }}>
       <button 
         onClick={onClose}
