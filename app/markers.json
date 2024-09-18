@@ -4,6 +4,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Track Mafia",
         "message": "Track Mafia: Thursdays at 6:30pm, Paddington Recreation Ground W9 1PF. Free track training in 4-week blocks. All abilities welcome, bag drop available.",
         "imageId": 1011,
         "iconSize": [45, 45],
@@ -19,6 +20,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Your Friendly Runners",
         "message": "Your Friendly Runners: Saturdays at 9am, Lodestar Coffee E5 8EE. East London-based friendly running group for all abilities. Bag drop available.",
         "imageId": 870,
         "iconSize": [45, 45],
@@ -34,6 +36,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "One Track",
         "message": "One Track: Thursday at 6:30pm, Duke of York Square SW3 4LY. Track runs in Chelsea led by coach Fletch. All abilities welcome, bag drop on site.",
         "imageId": 870,
         "iconSize": [45, 45],
@@ -49,6 +52,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Pure Sport Run Club",
         "message": "Pure Sport Run Club: Wednesday at 6:15pm, Battersea Park Track Entrance/Pure Sport HQ (alternate weeks). Weekly social 5k of intervals plus monthly track night. All abilities welcome, bag drop available.",
         "imageId": 870,
         "iconSize": [45, 45],
@@ -64,6 +68,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Tempo Run Club",
         "message": "Tempo run club: Tuesday at 6:45pm, Peckham Levels SE15 4ST. Community of musicians and DJs in South London. Free weekly run for all abilities, bag drop and open deck DJ sets.",
         "imageId": 871,
         "iconSize": [45, 45],
@@ -79,6 +84,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Mafia Moves",
         "message": "Mafia Moves: Tuesday at 6.30pm, Beaverton Corner Pin N17 0AG, and Saturday at 9:30am, Tottenham Stadium. Weekly runs for all abilities in north London led by coach Andre. Free sessions with bag drop available.",
         "imageId": 837,
         "iconSize": [45, 45],
@@ -94,6 +100,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Grove Lane Runners",
         "message": "Grove lane runners: Wednesday at 7:30am and Sunday at 8:45am, Govelane Deli SE5 8SY. Friendly 5's on Sundays and mid-week miles on Wednesdays in south London. All abilities welcome, bag drop available.",
         "imageId": 872,
         "iconSize": [45, 45],
@@ -109,6 +116,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Tracksmith Run Clubs",
         "message": "Tracksmith Run Clubs: Various locations in London. Several weekly run clubs led by coach Amrit. Check Tracksmith Strava for event details.",
         "imageId": 873,
         "iconSize": [45, 45],
@@ -124,6 +132,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Solemother",
         "message": "Solemother: Various locations. Super fun, sassy, and supportive social exercise group for women. Activities include runs, hikes, swims, classes, and social events.",
         "imageId": 874,
         "iconSize": [45, 45],
@@ -139,6 +148,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Run Talk Run",
         "message": "Run Talk Run: Various locations across the UK. Running group and mental health support community. Casual jogs and supportive conversations.",
         "imageId": 875,
         "iconSize": [45, 45],
@@ -154,6 +164,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Park Run UK",
         "message": "Park Run UK: Various locations. Free 5K runs every Saturday morning. Register online, print barcode, and join any event worldwide.",
         "imageId": 876,
         "iconSize": [45, 45],
@@ -169,6 +180,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Run Dem Crew",
         "message": "Run Dem Crew: London. Fun running crew with emphasis on community, youth mentoring, and creative endeavors.",
         "imageId": 877,
         "iconSize": [45, 45],
@@ -184,6 +196,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Midnight Runners",
         "message": "Midnight Runners: London. Runs with loud beats, exercise stops, and a party atmosphere. No one left behind policy.",
         "imageId": 878,
         "iconSize": [45, 45],
@@ -199,6 +212,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "WMN RUN",
         "message": "WMN RUN: London and Bristol. Mission to bridge the gender gap in running. Regular social runs and race training opportunities.",
         "imageId": 879,
         "iconSize": [45, 45],
@@ -214,6 +228,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Mikkeller Running Club",
         "message": "Mikkeller Running Club: London. Combines running with food and beer. Global operation with a focus on balancing fitness and enjoyment of life.",
         "imageId": 880,
         "iconSize": [45, 45],
@@ -229,6 +244,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Our Parks",
         "message": "Our Parks: Various locations across UK parks. Free fitness classes including running. Focus on accessibility and inclusivity.",
         "imageId": 881,
         "iconSize": [45, 45],
@@ -244,6 +260,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "LDN Slct",
         "message": "LDN Slct: Speed sessions on Tuesdays at Paddington Track and Hyde Park for Saturday morning social runs. Headed up by coach Manni.",
         "imageId": 882,
         "iconSize": [45, 45],
@@ -259,6 +276,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Scrambled Legs",
         "message": "Scrambled Legs: Weekly long runs on Saturdays between 20-30k in London. New routes and meeting places each week.",
         "imageId": 883,
         "iconSize": [45, 45],
@@ -274,6 +292,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Sexy Pace Run Crew",
         "message": "Sexy Pace Run Crew: Biweekly women's social runs for beginners and anyone looking to run at a 'sexy pace'. Starting at the On Regent street store for a 5k.",
         "imageId": 884,
         "iconSize": [45, 45],
@@ -289,6 +308,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Say Yes Club",
         "message": "Say Yes Club: Every Tuesday evening at 6:15pm in London Fields for a social 5k. Finish at a pub for social drinks.",
         "imageId": 885,
         "iconSize": [45, 45],
@@ -304,6 +324,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "10Ironwomen",
         "message": "10Ironwomen: Inclusive female-only run and Triathlon club in London. Striving for a 50/50 split in ironman attendance.",
         "imageId": 886,
         "iconSize": [45, 45],
@@ -319,6 +340,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Ealing Eagles",
         "message": "Ealing Eagles: Friendly, inclusive and diverse running club based in Ealing. Social Monday and Wednesday 7.30pm club runs.",
         "imageId": 887,
         "iconSize": [45, 45],

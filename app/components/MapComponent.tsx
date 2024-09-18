@@ -15,25 +15,18 @@ interface Marker {
   properties: {
     iconSize: [number, number];
     imageId: number;
-    message: string;
-    instagram: string;
+    name: string;
+    description: string;
     location: string;
-    timetable: string;
+    meetingTime: string;
   };
-}
-
-interface PopupInfo {
-  message: string;
-  coordinates: [number, number];
-  instagram: string;
-  location: string;
-  timetable: string;
 }
 
 const MapComponent: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [popupInfo, setPopupInfo] = useState<PopupInfo | null>(null);
+  const [selectedMarker, setSelectedMarker] = useState<Marker | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -47,29 +40,16 @@ const MapComponent: React.FC = () => {
       center: [-0.1575, 51.5074],
       zoom: 12,
       maxZoom: 13,
-      minZoom: 10, // Added minZoom for better control
+      minZoom: 10,
       pitchWithRotate: false,
       dragRotate: false,
     });
 
     map.current = newMap;
 
-    // Ensure max zoom is respected
-    newMap.on('zoom', () => {
-      if (newMap.getZoom() > 12.5) {
-        newMap.setZoom(12.5);
-      }
-    });
-
-    newMap.on('zoom', () => {
-      if (newMap.getZoom() < 10) {
-        newMap.setZoom(10);
-      }
-    });
-
     newMap.on('load', () => {
       (geojson.features as unknown as Marker[]).forEach((marker) => {
-        const el = document.createElement('div');
+        const el = document.createElement('div');        
         const width = marker.properties.iconSize[0] * 0.7;
         const height = marker.properties.iconSize[1] * 0.7;
         el.className = 'marker';
@@ -81,13 +61,8 @@ const MapComponent: React.FC = () => {
         el.style.cursor = 'pointer';
 
         el.addEventListener('click', () => {
-          setPopupInfo({
-            message: marker.properties.message,
-            coordinates: marker.geometry.coordinates,
-            instagram: marker.properties.instagram,
-            location: marker.properties.location,
-            timetable: marker.properties.timetable
-          });
+          setSelectedMarker(marker);
+          setIsSidebarOpen(true);
         });
 
         new mapboxgl.Marker(el)
@@ -101,18 +76,133 @@ const MapComponent: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (map.current && selectedMarker) {
+      map.current.flyTo({
+        center: selectedMarker.geometry.coordinates,
+        zoom: 14,
+        duration: 1000
+      });
+    }
+  }, [selectedMarker]);
+
+  const handleMarkerSelect = (marker: Marker) => {
+    setSelectedMarker(marker);
+    setIsSidebarOpen(true);
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
+    <div style={{ height: '100vh', width: '100%', position: 'relative' }}>
       <div ref={mapContainer} style={{ width: '100%', height: '100%' }} />
-      {popupInfo && (
-        <Popup
-          info={popupInfo}
-          onClose={() => {
-            console.log('Closing popup');
-            setPopupInfo(null);
+      <button 
+        onClick={toggleSidebar}
+        style={{
+          position: 'absolute',
+          top: '10px',
+          left: '10px',
+          zIndex: 1000,
+          padding: '10px',
+          backgroundColor: 'white',
+          border: 'none',
+          borderRadius: '50%',
+          boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+          cursor: 'pointer',
+          width: '40px',
+          height: '40px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        {isSidebarOpen ? '✕' : '☰'}
+      </button>
+      <Sidebar 
+        selectedMarker={selectedMarker} 
+        onMarkerSelect={handleMarkerSelect} 
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
+    </div>
+  );
+};
+
+const Sidebar: React.FC<{ 
+  selectedMarker: Marker | null, 
+  onMarkerSelect: (marker: Marker) => void,
+  isOpen: boolean,
+  onClose: () => void
+}> = ({ selectedMarker, onMarkerSelect, isOpen, onClose }) => {
+  return (
+    <div style={{
+      position: 'absolute',
+      top: 0,
+      left: isOpen ? 0 : '-100%',
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'white',
+      boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+      padding: '20px',
+      overflowY: 'auto',
+      color: 'black',
+      transition: 'left 0.3s ease-in-out',
+      zIndex: 1000,
+      maxWidth: '300px',
+    }}>
+      <button 
+        onClick={onClose}
+        style={{
+          position: 'absolute',
+          top: '10px',
+          right: '10px',
+          background: 'none',
+          border: 'none',
+          fontSize: '20px',
+          cursor: 'pointer'
+        }}
+      >
+        &times;
+      </button>
+      <h2 style={{ color: 'black' }}>London Run Clubs</h2>
+      <p style={{ color: 'black' }}>Discover running communities in London.</p>
+      <input type="text" placeholder="Search run clubs" style={{ width: '100%', padding: '10px', marginBottom: '20px', color: 'black' }} />
+      
+      {(geojson.features as unknown as Marker[]).map((club) => (
+        <div 
+          key={club.properties.imageId} 
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            border: '1px solid #ddd',
+            borderRadius: '8px',
+            padding: '10px',
+            marginBottom: '10px',
+            backgroundColor: selectedMarker === club ? '#f0f0f0' : 'white',
+            cursor: 'pointer'
           }}
-        />
-      )}
+          onClick={() => onMarkerSelect(club)}
+        >
+          <div 
+            style={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              backgroundImage: `url(https://picsum.photos/id/${club.properties.imageId}/40/40)`,
+              backgroundSize: 'cover',
+              marginRight: '10px',
+              flexShrink: 0
+            }}
+          />
+          <div>
+            <p style={{ color: 'black', fontSize: '12px', margin: '2px 0 0 0' }}>Name: {club.properties.name}</p>
+            <p style={{ color: 'black', fontSize: '12px', margin: '5px 0 0 0' }}>Location: {club.properties.location}</p>
+            <p style={{ color: 'black', fontSize: '12px', margin: '2px 0 0 0' }}>Meeting Time: {club.properties.meetingTime}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
