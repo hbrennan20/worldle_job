@@ -46,17 +46,26 @@ const MapComponent: React.FC = () => {
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [-0.1575, 51.5074],
       zoom: 12,
-      pitchWithRotate: false, // Disable map tilting
-      dragRotate: false // Disable map rotation
+      maxZoom: 13,
+      minZoom: 10, // Added minZoom for better control
+      pitchWithRotate: false,
+      dragRotate: false,
     });
 
     map.current = newMap;
 
+    // Ensure max zoom is respected
+    newMap.on('zoom', () => {
+      if (newMap.getZoom() > 13) {
+        newMap.setZoom(13);
+      }
+    });
+
     newMap.on('load', () => {
       (geojson.features as unknown as Marker[]).forEach((marker) => {
         const el = document.createElement('div');
-        const width = marker.properties.iconSize[0] * 0.7; // Reduce size by 20%
-        const height = marker.properties.iconSize[1] * 0.7; // Reduce size by 20%
+        const width = marker.properties.iconSize[0] * 0.7;
+        const height = marker.properties.iconSize[1] * 0.7;
         el.className = 'marker';
         el.style.backgroundImage = `url(https://picsum.photos/id/${marker.properties.imageId}/${Math.round(width)}/${Math.round(height)})`;
         el.style.width = `${width}px`;
