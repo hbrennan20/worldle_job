@@ -3,18 +3,19 @@ import { Card, CardContent, Typography, Link, Dialog } from '@mui/material';
 import geojson from '../markers.json';
 
 interface RunClub {
-  type: 'Feature';
+  type: string;
   geometry: {
-    type: 'Point';
-    coordinates: [number, number];
+    type: string;
+    coordinates: number[];
   };
   properties: {
-    iconSize: [number, number];
+    iconSize: number[];
     imageId: number;
     message: string;
     instagram: string;
     location: string;
     timetable: string;
+    name: string;
   };
 }
 
