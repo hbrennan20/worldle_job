@@ -28,6 +28,7 @@ const MapComponent: React.FC = () => {
   const map = useRef<mapboxgl.Map | null>(null);
   const [selectedMarker, setSelectedMarker] = useState<Marker | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -44,6 +45,9 @@ const MapComponent: React.FC = () => {
       minZoom: 10,
       pitchWithRotate: false,
       dragRotate: false,
+      // Add these lines:
+      bearing: 0,
+      pitch: 0,
     });
 
     map.current = newMap;
@@ -62,8 +66,7 @@ const MapComponent: React.FC = () => {
         el.style.cursor = 'pointer';
 
         el.addEventListener('click', () => {
-          setSelectedMarker(marker);
-          setIsSidebarOpen(true);
+          handleMarkerSelect(marker);
         });
 
         new mapboxgl.Marker(el)
@@ -71,6 +74,10 @@ const MapComponent: React.FC = () => {
           .addTo(newMap);
       });
     });
+
+    // Add this line after map initialization
+    newMap.dragRotate.disable();
+    newMap.touchZoomRotate.disableRotation();
 
     return () => {
       newMap.remove();
@@ -90,6 +97,14 @@ const MapComponent: React.FC = () => {
   const handleMarkerSelect = (marker: Marker) => {
     setSelectedMarker(marker);
     setIsSidebarOpen(true);
+    
+    // Delay scrolling to ensure sidebar is open and rendered
+    setTimeout(() => {
+      const cardElement = document.getElementById(`card-${marker.properties.imageId}`);
+      if (cardElement && sidebarRef.current) {
+        cardElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }, 300);
   };
 
   const toggleSidebar = () => {
@@ -123,6 +138,7 @@ const MapComponent: React.FC = () => {
         {isSidebarOpen ? '✕' : '☰'}
       </button>
       <Sidebar 
+        ref={sidebarRef}
         selectedMarker={selectedMarker} 
         onMarkerSelect={handleMarkerSelect} 
         isOpen={isSidebarOpen}
@@ -132,14 +148,14 @@ const MapComponent: React.FC = () => {
   );
 };
 
-const Sidebar: React.FC<{ 
+const Sidebar = React.forwardRef<HTMLDivElement, { 
   selectedMarker: Marker | null, 
   onMarkerSelect: (marker: Marker) => void,
   isOpen: boolean,
   onClose: () => void
-}> = ({ selectedMarker, onMarkerSelect, isOpen, onClose }) => {
+}>(({ selectedMarker, onMarkerSelect, isOpen, onClose }, ref) => {
   return (
-    <div style={{
+    <div ref={ref} style={{
       position: 'absolute',
       top: 0,
       left: isOpen ? 0 : '-100%',
@@ -175,6 +191,7 @@ const Sidebar: React.FC<{
       {(geojson.features as unknown as Marker[]).map((club) => (
         <div 
           key={club.properties.imageId} 
+          id={`card-${club.properties.imageId}`}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -217,6 +234,6 @@ const Sidebar: React.FC<{
       ))}
     </div>
   );
-};
+});
 
 export default MapComponent;
