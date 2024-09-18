@@ -56,8 +56,8 @@ const MapComponent: React.FC = () => {
 
     // Ensure max zoom is respected
     newMap.on('zoom', () => {
-      if (newMap.getZoom() > 13) {
-        newMap.setZoom(13);
+      if (newMap.getZoom() > 12.5) {
+        newMap.setZoom(12.5);
       }
     });
 
