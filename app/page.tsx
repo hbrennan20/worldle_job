@@ -61,39 +61,35 @@ const WordleClone: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-between items-center py-2 px-1 sm:py-8 sm:px-4 bg-gray-100 text-black" onKeyDown={handleKeyPress} tabIndex={0}>
-      <div className="flex flex-col items-center">
-        <h1 className="text-2xl sm:text-5xl font-bold mb-2 sm:mb-10">Wordle Clone</h1>
+    <div className="min-h-screen w-full flex flex-col justify-center items-center bg-gray-100 text-gray-800 p-4" onKeyDown={handleKeyPress} tabIndex={0}>
+      <div className="w-full max-w-md">
+        <h1 className="text-4xl font-bold mb-8 text-center">Wordle Clone</h1>
         
         {/* Game Board */}
-        <div className="grid grid-rows-6 gap-1 sm:gap-2 mb-2 sm:mb-10">
+        <div className="grid grid-rows-6 gap-2 mb-6">
           {[...Array(6)].map((_, rowIndex) => (
-            <div key={rowIndex} className="flex items-center">
-              <div className="grid grid-cols-5 gap-1 sm:gap-2">
-                {[...Array(5)].map((_, colIndex) => {
-                  const letter: string = guesses[rowIndex]?.[colIndex] || (rowIndex === guesses.length ? currentGuess[colIndex] : '');
-                  const bgColor: string = getLetterColor(letter, colIndex, rowIndex);
-                  return (
-                    <div key={colIndex} className={`w-10 h-10 sm:w-16 sm:h-16 border-2 flex items-center justify-center text-lg sm:text-3xl font-bold ${bgColor}`}>
-                      {letter}
-                    </div>
-                  );
-                })}
-              </div>
+            <div key={rowIndex} className="grid grid-cols-5 gap-2">
+              {[...Array(5)].map((_, colIndex) => {
+                const letter: string = guesses[rowIndex]?.[colIndex] || (rowIndex === guesses.length ? currentGuess[colIndex] : '');
+                const bgColor: string = getLetterColor(letter, colIndex, rowIndex);
+                return (
+                  <div key={colIndex} className={`aspect-square flex items-center justify-center text-2xl font-bold rounded-md border-2 ${bgColor} transition-colors duration-300`}>
+                    {letter}
+                  </div>
+                );
+              })}
             </div>
           ))}
         </div>
-      </div>
 
-      <div className="mt-auto">
         {/* Keyboard */}
-        <div className="grid grid-rows-3 gap-1 sm:gap-2 w-full max-w-xs sm:max-w-lg mb-2 sm:mb-6">
+        <div className="grid grid-rows-3 gap-2 mb-4">
           {['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'].map((row, rowIndex) => (
-            <div key={rowIndex} className="flex justify-center gap-1 sm:gap-2">
+            <div key={rowIndex} className="flex justify-center gap-1">
               {row.split('').map((key) => (
                 <button
                   key={key}
-                  className="w-7 h-10 sm:w-12 sm:h-14 bg-gray-300 rounded flex items-center justify-center font-semibold text-sm sm:text-lg"
+                  className="w-8 h-10 bg-gray-300 rounded flex items-center justify-center font-semibold text-sm hover:bg-gray-400 transition-colors duration-200"
                   onClick={() => !gameOver && setCurrentGuess(prev => prev.length < 5 ? prev + key : prev)}
                   disabled={gameOver}
                 >
@@ -107,7 +103,7 @@ const WordleClone: React.FC = () => {
         {/* Submit button */}
         {!gameOver && (
           <button
-            className="w-full mb-2 sm:mb-6 px-4 sm:px-8 py-2 sm:py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-300 text-base sm:text-xl font-semibold"
+            className="w-full mb-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-lg font-semibold transition-colors duration-200"
             onClick={submitGuess}
             disabled={currentGuess.length !== 5}
           >
@@ -116,12 +112,14 @@ const WordleClone: React.FC = () => {
         )}
 
         {/* Game status and New Game button */}
-        <div className="mt-2 sm:mt-6 text-base sm:text-2xl font-bold text-center">
+        <div className="text-center">
           {gameOver && (
             <>
-              <div>{currentGuess === word ? 'You won!' : `Game over! The word was ${word}`}</div>
+              <div className="text-xl font-bold mb-4">
+                {currentGuess === word ? 'You won!' : `Game over! The word was ${word}`}
+              </div>
               <button
-                className="mt-2 sm:mt-6 px-4 sm:px-8 py-2 sm:py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-base sm:text-xl font-semibold"
+                className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 text-lg font-semibold transition-colors duration-200"
                 onClick={newGame}
               >
                 New Game
