@@ -115,7 +115,8 @@ const MapComponent: React.FC = () => {
           height: '40px',
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          color: 'black'  // Added this line to make the icon black
         }}
       >
         {isSidebarOpen ? '✕' : '☰'}
